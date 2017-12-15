@@ -8,20 +8,29 @@
 <style type="text/css">
 	.btnRun, .btnPause, .btnResume, .btnEdit {margin-right: 8px;}
 	.input-group {margin-bottom: 5px;}
-	.title {padding-top: 15px; text-align: center; font-size: 23px;  padding-bottom: 25px; border: 1px solid; border-color: #80808024;}
-	.btnCreate {margin: -35px 28px;}
+	.title {text-align:center; font-size:30px; margin-top:15px;}
+	.btnCreate {text-align:right; margin:5px 15px;}
+	.head {border:solid; border-color:#8080805c; border-width:1px;}
+	.line {
+	    border: 0;
+	    height: 1px;
+	    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0));
+	}
 </style>
 </head>
 <body>
 
 	<div class="container-fluid" style="padding-top: 15px;">
-	    <div class="title">
-	        QUARTZ MANAGEMENT CONSOLE
+	    
+	    <div class="head">
+	    	<div class="title">QUARTZ MANAGEMENT CONSOLE</div>
+	    	<hr class="line">
+	        <div class="btnCreate">
+				<button type="button" class="btn btn-primary" id="createBtn" data-toggle="modal">create</button>
+		    </div>
 		</div>
 		
-		<div class="btnCreate">
-			<button type="button" class="btn btn-default pull-right" id="createBtn" data-toggle="modal">create</button>
-		</div>
+		
 		
 		<table class="table table-bordered">
 			<thead>
