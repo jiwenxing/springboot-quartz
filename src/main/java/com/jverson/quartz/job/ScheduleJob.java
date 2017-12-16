@@ -12,14 +12,12 @@ public class ScheduleJob implements Serializable{
     
     private String jobGroup;
     
-    /** 任务状态 0禁用 1启用 2删除*/
     private String jobStatus;
     
     private String cronExpression;
 
     private String desc;
     
-    /** 接口名称, 用于MQ进行接口回调 */
     private String interfaceName; 
     
 	public String getJobId() {

@@ -2,10 +2,6 @@ package com.jverson.quartz.common;
 
 import java.io.Serializable;
 
-/**
- * @version  v1.0
- * @author   jiwenxing@jd.com <br/>
- */
 public class Message implements Serializable{
 
 	private static final long serialVersionUID = 1L;

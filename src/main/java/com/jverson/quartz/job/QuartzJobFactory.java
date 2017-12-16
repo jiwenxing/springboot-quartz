@@ -8,12 +8,15 @@ import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.common.collect.Lists;
+import com.jverson.quartz.mq.Sender;
 import com.jverson.quartz.service.SampleService;
 
 public class QuartzJobFactory implements Job {
 	
 	@Autowired
 	private SampleService sampleService;
+	@Autowired
+	private Sender sender;
 
 	
 	public static List<ScheduleJob> jobList = Lists.newArrayList();
@@ -28,8 +31,9 @@ public class QuartzJobFactory implements Job {
 				job.setJobGroup("job_group_odd");
 			}
 			job.setJobStatus("1");
-			job.setCronExpression(String.format("0/%s * * * * ?", (i+1)*5));
+			job.setCronExpression(String.format("0/%s * * * * ?", (i+1)*20));
 			job.setDesc("i am job number " + i);
+			job.setInterfaceName("interface"+i);
 			jobList.add(job);
 		}
 	}
@@ -45,11 +49,14 @@ public class QuartzJobFactory implements Job {
     	ScheduleJob scheduleJob = (ScheduleJob)jobExecutionContext.getMergedJobDataMap().get("scheduleJob");
     	String jobName = scheduleJob.getJobName();
     	
-    	// TODO use MQ to notify the task running of other system
+    	// execute task inner quartz system
     	// spring bean can be @Autowired
     	sampleService.hello(jobName);
     	
-    	// simulate time consuming task
+    	// use rabbit MQ to asynchronously notify the task execution in business system
+    	sender.send(scheduleJob.getInterfaceName());
+    	
+    	// simulate time-consuming task
     	if (jobName.equals("job_name_4") || jobName.equals("addjob")) {
 			try {
 				Thread.sleep(1000*60);

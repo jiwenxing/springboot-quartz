@@ -15,7 +15,6 @@ import org.quartz.TriggerBuilder;
 import org.quartz.TriggerKey;
 import org.quartz.spi.JobFactory;
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,7 +31,6 @@ import com.jverson.quartz.spring.AutowiringSpringBeanJobFactory;
  * @date Dec 12, 2017 9:39:31 AM
  */
 @Configuration
-@ConditionalOnProperty(name = "quartz.enabled")
 public class SchedulerConfig {
 	
     @Bean
@@ -57,7 +55,7 @@ public class SchedulerConfig {
         Scheduler scheduler = factory.getScheduler();
         scheduler.setJobFactory(jobFactory);
         
-        // register all job
+        // register all jobs
         List<ScheduleJob> jobs = QuartzJobFactory.getInitAllJobs();
         for (ScheduleJob job : jobs) {
         	TriggerKey triggerKey = TriggerKey.triggerKey(job.getJobName(), job.getJobGroup());
