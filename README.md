@@ -18,7 +18,7 @@ quartz + springboot + RabbitMQ + H2(in-memory database) + dynamic task managemen
 
 ![](http://ochyazsr6.bkt.clouddn.com/6c906cc88a4b358cb333a5aa5c302136.png)
 
-**visit http://localhost:8080/index after starting application**
+*visit http://localhost:8080/index after starting application*
 
 ## notice
 
