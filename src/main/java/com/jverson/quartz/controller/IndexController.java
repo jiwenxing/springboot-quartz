@@ -12,7 +12,6 @@ import com.jverson.quartz.service.ScheduleJobService;
 
 
 @Controller
-@RequestMapping("/quartz")
 public class IndexController {
 
 	@Autowired 
