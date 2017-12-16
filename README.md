@@ -10,7 +10,9 @@ quartz + springboot + RabbitMQ + H2(in-memory database) + dynamic task managemen
 
 ## preview
 
-![](http://7xry05.com1.z0.glb.clouddn.com/201712151331_175.png)
+![](http://ochyazsr6.bkt.clouddn.com/6c906cc88a4b358cb333a5aa5c302136.png)
+
+
 
 
 ## references
