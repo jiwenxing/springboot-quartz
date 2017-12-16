@@ -1,11 +1,15 @@
-## springboot-quartz-web
-quartz + springboot + RabbitMQ + H2(in-memory database) + dynamic task management console. you can run it immediately without doing anything else.
+# springboot-quartz
+quartz + springboot + RabbitMQ + H2(in-memory database) + dynamic task management web console.
+
+[![dependencies](https://img.shields.io/badge/springboot-v1.4.5-blue.svg)]()
+[![dependencies](https://img.shields.io/badge/quartz-v2.2.1-blue.svg)]()
+[![license](https://img.shields.io/cocoapods/l/AFNetworking.svg)]()
 
 ## features
 
 - dynamic task management web console provided
 - zero xml configuration
-- no db configuration by H2(in-memory database)
+- using in-memory database H2
 - use RabbitMQ to asynchronously notify the job execution
 
 ## preview
