@@ -1,5 +1,5 @@
 ## springboot-quartz-web
-quartz + springboot + H2(in-memory database) + dynamic task management console. you can run it immediately without doing anything else.
+quartz + springboot + RabbitMQ + H2(in-memory database) + dynamic task management console. you can run it immediately without doing anything else.
 
 ## features
 
