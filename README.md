@@ -25,7 +25,7 @@ quartz + springboot + RabbitMQ + H2(in-memory database) + dynamic task managemen
 
 ## notice
 
-rabbitMQ is not in use by default. steps blow should be followed to test it.  
+RabbitMQ is not in use by default. steps blow should be followed to test it.  
 
 1. install rabbitmq-server and start it
 2. update the rabbitmq configuration in `application.properties`
