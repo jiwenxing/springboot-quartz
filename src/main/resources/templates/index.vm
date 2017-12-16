@@ -62,7 +62,7 @@
 							<button type="button" class="btn btn-default btnPause">pause</button>
 							<button type="button" class="btn btn-default btnResume">resume</button>
 							<button type="button" class="btn btn-default btnEdit">edit</button>
-							<button type="button" class="btn btn-warn btnDelete">delete</button>
+							<button type="button" class="btn btn-warning btnDelete">delete</button>
 						</div>
 					</td>
 				</tr>
