@@ -15,8 +15,8 @@ public class QuartzJobFactory implements Job {
 	
 	@Autowired
 	private SampleService sampleService;
-	@Autowired
-	private Sender sender;
+//	@Autowired
+//	private Sender sender;
 
 	
 	public static List<ScheduleJob> jobList = Lists.newArrayList();
@@ -31,7 +31,7 @@ public class QuartzJobFactory implements Job {
 				job.setJobGroup("job_group_odd");
 			}
 			job.setJobStatus("1");
-			job.setCronExpression(String.format("0/%s * * * * ?", (i+1)*20));
+			job.setCronExpression(String.format("0/%s * * * * ?", (i+1)*5));
 			job.setDesc("i am job number " + i);
 			job.setInterfaceName("interface"+i);
 			jobList.add(job);
@@ -54,7 +54,7 @@ public class QuartzJobFactory implements Job {
     	sampleService.hello(jobName);
     	
     	// use rabbit MQ to asynchronously notify the task execution in business system
-    	sender.send(scheduleJob.getInterfaceName());
+    	// sender.send(scheduleJob.getInterfaceName());
     	
     	// simulate time-consuming task
     	if (jobName.equals("job_name_4") || jobName.equals("addjob")) {
