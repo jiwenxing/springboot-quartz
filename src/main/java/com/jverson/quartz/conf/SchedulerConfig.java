@@ -47,6 +47,7 @@ public class SchedulerConfig {
         // this allows to update triggers in DB when updating settings in config file
         factory.setOverwriteExistingJobs(true);
         factory.setDataSource(dataSource);
+        // use specify jobFactory to create jobDetail
         factory.setJobFactory(jobFactory);
 
         factory.setQuartzProperties(quartzProperties());

@@ -9,6 +9,7 @@ import org.springframework.scheduling.quartz.SpringBeanJobFactory;
 /**
  * Adds autowiring support to quartz jobs.
  * @see https://gist.github.com/jelies/5085593
+ * @see https://blog.seveniu.com/post/spring-quartz-autowired/
  */
 public final class AutowiringSpringBeanJobFactory extends SpringBeanJobFactory implements
         ApplicationContextAware {
