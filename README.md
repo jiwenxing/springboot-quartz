@@ -1,9 +1,11 @@
-# springboot-quartz
+![](http://7xry05.com1.z0.glb.clouddn.com/201712221121_446.png)
 
 [![build](https://img.shields.io/badge/build-passing-green.svg)]()
 [![dependencies](https://img.shields.io/badge/springboot-v1.4.5-blue.svg)]()
 [![dependencies](https://img.shields.io/badge/quartz-v2.2.1-blue.svg)]()
 [![license](https://img.shields.io/badge/license-MIT-yellowgreen.svg)]()
+
+---
 
 quartz + springboot + RabbitMQ + H2(in-memory database) + dynamic task management web console.
 
